@@ -1,43 +1,36 @@
-let selected1 = document.querySelector(".selected-1");
+const [selectBox1, selectBox2] = [document.querySelector(".select-box1"), document.querySelector(".select-box2")];
 
-const optionsContainer1 = document.querySelector(".options-container-1");
+const [optionContainer1, optionContainer2] = [document.querySelector(".options-container-1"), document.querySelector(".options-container-2")];
 
-const optionsList1 = document.querySelectorAll(".options-1");
+const [optionsList1, optionsList2] = [document.querySelectorAll(".options-1"), document.querySelectorAll(".options-2")];
 
-let selected2 = document.querySelector(".selected-2");
+let [selectedOption1, selectedOption2] = ["", ""];
 
-const optionsContainer2 = document.querySelector(".options-container-2");
+let [currencyCode1, currencyCode2] = ["", ""];
 
-const optionsList2 = document.querySelectorAll(".options-2");
+let searchBox = document.querySelector(".search-box-1 input");
 
-let searchBox = document.querySelector(".search-box-1 input")
-
-let selectedOption1 = "";
-let selectedOption2 = "";
-
-let currencyCode1 = "";
-let currencyCode2 = "";
+let convertButton = document.querySelector(".convert-button");
 
 
-
-selected1.addEventListener("click", () => {  			optionsContainer1.classList.toggle("active-1");
+selectBox1.addEventListener("click", () => {  			optionContainer1.classList.toggle("active-1");
 				});
 				
 optionsList1.forEach( o => {
 				o.addEventListener("click", () => {
-								selected1.innerHTML = o.querySelector("label").innerHTML;								optionsContainer1.classList.remove("active-1");
+								selectBox1.innerHTML = o.querySelector("label").innerHTML;								optionContainer1.classList.remove("active-1");
 								selectedOption1 = o.querySelector("label");								
 				});				
 });
 
 
-selected2.addEventListener("click", () => {
-				optionsContainer2.classList.toggle("active-2")
+selectBox2.addEventListener("click", () => {
+				optionContainer2.classList.toggle("active-2")
 				});
 
 optionsList2.forEach( o => {
 				o.addEventListener("click", () => {
-								selected2.innerHTML = o.querySelector("label").innerHTML;									optionsContainer2.classList.remove("active-2");
+								selectBox2.innerHTML = o.querySelector("label").innerHTML;									optionContainer2.classList.remove("active-2");
 								selectedOption2 = o.querySelector("label");
 				});
 });
@@ -48,7 +41,7 @@ function apiCall() {
 				const host = 'api.frankfurter.app';
 				currencyCode1 = selectedOption1.querySelectorAll("span");
 				currencyCode2 = selectedOption2.querySelectorAll("span");
-			 let amount = document.getElementById("amt").value;
+			 let amount = document.getElementById("input-amt").value;
 			 let converted = "";
 
 fetch(`https://${host}/latest?amount=1&from=${currencyCode1[0].innerHTML}&to=${currencyCode2[0].innerHTML}` )
@@ -70,19 +63,19 @@ fetch(`https://${host}/latest?amount=1&from=${currencyCode1[0].innerHTML}&to=${c
 
 
 function exitSearch() {
-			optionsContainer1.classList.remove("active-1");	optionsContainer2.classList.remove("active-2");						
+			optionContainer1.classList.remove("active-1");	optionContainer2.classList.remove("active-2");						
 }
 
 
 function change() {		
 								
-				[selected1.innerHTML, selected2.innerHTML] = [selected2.innerHTML, selected1.innerHTML];
+				[selectBox1.innerHTML, selectBox2.innerHTML] = [selectBox2.innerHTML, selectBox1.innerHTML];
 				
-				selectedOption1.innerHTML = `${selected1.innerHTML}`;
-				selectedOption2.innerHTML = `${selected2.innerHTML}`;				
+				selectedOption1.innerHTML = `${selectBox1.innerHTML}`;
+				selectedOption2.innerHTML = `${selectBox2.innerHTML}`;				
 }
 
-
+/*
 searchBox.addEventListener("keyup", function(e) {
 				filterList(e.target.value);
 });
@@ -98,3 +91,15 @@ const filterList = searchTerm => {
 								}
 				});
 };
+*/
+
+
+// whenever the user inputs amount in the input box it'll take that amount and perform a conversion
+
+/*  
+let amount = document.getElementById("input-amt");
+
+amount.addEventListener("keyup", e => {
+				console.log(e.key);
+})
+*/
