@@ -6,8 +6,6 @@ main {
 				border-radius: 10px;
 }
 
-/* Amount Box */
-
 #amount {
 				position: relative;				
 }
@@ -29,17 +27,11 @@ main {
 				outline: none;
 }
 
-/* Amount Box */
-
-
-/* Select Currency Box */
 
 #select-currency-box1,
 #select-currency-box2 {
-				/*border: 1px solid green;*/
 				display: flex;
 				flex-direction: column;
-				/*position: relative;*/
 }
 
 .select-label1 {}
@@ -48,11 +40,11 @@ main {
 .options-container-2 {
 				width: 100%;
 			 max-height: 0;
-			 /*margin-top: 45px;*/
+			 margin-top: 45px;
 				padding-top: 10px;
 				position: absolute;
 				top: 0;
-				left: 0;				
+				left: 0;
 				z-index: 2;				
 				opacity: 0;				
 				overflow: hidden;
@@ -132,9 +124,41 @@ main {
 				filter: invert(100%);
 }
 
-/* Select Currency Box */
+.search-box-1 input,
+.search-box-2 input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 8;
+				width: 100%;
+				padding: 14px 14px;
+				box-sizing: border-box;
+				border-radius: 5px;
+				border: 1px solid blue;
+				display: none;
+				transition: all 0.3s;
+				font-size: 15px;
+}
 
-/* convert button */
+.search-box-1 button,
+.search-box-2 button {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				z-index: 10;
+				border: none;
+				background: white;
+				opacity: 0;
+}
+
+.options-container-1.active-1 ~ .search-box-1 input,
+.options-container-1.active-1 ~ .search-box-1 button,
+.options-container-2.active-2 ~ .search-box-2 input,
+.options-container-2.active-2 ~ .search-box-2 button {
+				opacity: 1;
+				display: block;
+}
+
 
 .convert-button {
 				width: 100%;
@@ -149,7 +173,6 @@ main {
 		 	font-weight: 500;
 }
 
-/* convert button */
 
 #reverse-img {
 				padding: 0;
@@ -169,13 +192,6 @@ main {
 #reverse-img img {
 				width: 100%;
 }
-
-
-/* convert button */
-
-
-/* Conversion button */
-
 
 #conversion-result {
 				display: none;
@@ -210,18 +226,15 @@ main {
 }
 
 
-/* Conversion button */
-
-
-
 
 @media screen and (min-width:800px) {
-				
+				main {
+								margin: 20px 10px;
+				}
 				#main-container {
 								display: flex;
+								margin: 20px 0px;
 								
-								/*padding: 20px 20px;
-								margin: 30px;*/
 				}					
 				
 				#input-amt {
@@ -243,7 +256,7 @@ main {
 				.options-container-1,
 				.options-container-2 {
 								position: absolute;
-								top: 75px;
+								top: 30px;
 								border: 0.7px solid gray;
 								z-index: 2;
 								height: 350%;
@@ -266,22 +279,33 @@ main {
 								display: flex;
 								justify-content: flex-end;
 				}
-							
+											
 				.convert-button {
 								width: 100px;
-								margin: 15px 9px;
+								margin: 10px 9px;
+				}
+				
+				.search-box-1 input,
+				.search-box-2 input {
+								top: 25px;
+								padding: 9px;
+				}
+				
+				.search-box-1 button,
+				.search-box-2 button {
+								top: 35px;
 				}
 				
 				#conversion-result .para-1,
 				#conversion-result .para-3,
-				l#conversion-result .para-4,
+				#conversion-result .para-4,
 				#conversion-result .para-5{
 								font-size: 18px;
-}
+				}
 
 				#conversion-result .para-2 {
 								font-size: 40px
-}
+				}
 				
 				
 }

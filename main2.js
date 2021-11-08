@@ -14,6 +14,7 @@ let convertButton = document.querySelector(".convert-button");
 
 
 selectBox1.addEventListener("click", () => {  			optionContainer1.classList.toggle("active-1");
+				
 				});
 				
 optionsList1.forEach( o => {
@@ -75,7 +76,7 @@ function change() {
 				selectedOption2.innerHTML = `${selectBox2.innerHTML}`;				
 }
 
-/*
+
 searchBox.addEventListener("keyup", function(e) {
 				filterList(e.target.value);
 });
@@ -91,7 +92,7 @@ const filterList = searchTerm => {
 								}
 				});
 };
-*/
+
 
 
 // whenever the user inputs amount in the input box it'll take that amount and perform a conversion
