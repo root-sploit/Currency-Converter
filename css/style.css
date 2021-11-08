@@ -1,0 +1,313 @@
+
+
+main {
+				border: 0.7px solid gray;
+				padding: 10px;
+				border-radius: 10px;
+}
+
+#amount {
+				position: relative;				
+}
+
+.input-label {
+				display: block;
+}
+
+#input-amt {
+				width: 100%;
+				height: 35px;
+				margin-top: 7px;
+				margin-bottom: 20px;
+				border-radius: 3px;
+				border: 0.5px solid gray;
+				box-sizing: border-box;
+				font-size: 16px;
+				padding-left: 10px;
+				outline: none;
+}
+
+
+#select-currency-box1,
+#select-currency-box2 {
+				display: flex;
+				flex-direction: column;
+}
+
+.select-label1 {}
+
+.options-container-1,
+.options-container-2 {
+				width: 100%;
+			 max-height: 0;
+			 margin-top: 45px;
+				padding-top: 10px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;				
+				opacity: 0;				
+				overflow: hidden;
+				border-radius: 3px;
+				transition: all 0.4s;								
+				background-color: white;				
+				box-sizing: border-box;
+				order: 2;
+}
+
+.options-container-1.active-1,
+.options-container-2.active-2 {
+				max-height: 100vh;
+				opacity: 1;
+				overflow-y: scroll;
+}
+
+.options-container-1::-webkit-scrollbar,
+.options-container-2::-webkit-scrollbar {
+				width: 5px;
+				border-radius: 0 3px 3px 0;
+}
+
+.options-container-1::-webkit-scrollbar-thumb, 
+.options-container-2::-webkit-scrollbar-thumb {
+				background: gray;
+				border-radius: 0 0px 0px 0;
+}
+
+.options-container-1 .options-1,
+.options-container-2 .options-2 {
+				padding: 12px 24px;
+				cursor: pointer;
+}
+
+.options-container-1 .options-1:hover,
+.options-container-2 .options-2:hover {
+				background-color: lightcyan;
+}
+
+.options-container-1 .options-1 label,
+.options-container-2 .options-2 label {
+				cursor: pointer;
+}
+
+.options-container-1 .options-1 input,
+.options-container-2 .options-2 input {
+				display: none;
+}
+
+.select-box1,
+.select-box2 {
+				width: 100%
+				height: 35px;
+				border: .5px solid gray;
+				padding: 8px 10px;
+				border-radius: 3px;
+				margin-top: 7px;
+				box-sizing: border-box;
+				position: relative;
+				font-size: 16px;
+				margin-bottom: 5px;
+				order: 1;
+}
+
+.select-box1::after,
+.select-box2::after {
+				content: '';
+				position: absolute;
+				background: url('img/arrow-down.svg');
+				background-repeat: no-repeat;
+				background-size: contain;
+				height: 100%;
+				width: 32px;
+				right: 7px;
+				top: 2px;
+				filter: invert(100%);
+}
+
+.search-box-1 input,
+.search-box-2 input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 8;
+				width: 100%;
+				padding: 14px 14px;
+				box-sizing: border-box;
+				border-radius: 5px;
+				border: 1px solid blue;
+				display: none;
+				transition: all 0.3s;
+				font-size: 15px;
+}
+
+.search-box-1 button,
+.search-box-2 button {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				z-index: 10;
+				border: none;
+				background: white;
+				opacity: 0;
+}
+
+.options-container-1.active-1 ~ .search-box-1 input,
+.options-container-1.active-1 ~ .search-box-1 button,
+.options-container-2.active-2 ~ .search-box-2 input,
+.options-container-2.active-2 ~ .search-box-2 button {
+				opacity: 1;
+				display: block;
+}
+
+
+.convert-button {
+				width: 100%;
+				background-color: #0071EB;
+				color: white;
+				border-radius: 5px;
+				border: none;
+				padding: 10px 0;
+		 	margin-top: 15px;
+		 	margin-bottom: 10px;
+		 	font-size: 16px;
+		 	font-weight: 500;
+}
+
+
+#reverse-img {
+				padding: 0;
+				margin: 0;
+}
+
+#reverse-img button {
+				border: none;
+				background-color: white;
+				cursor: pointer;
+				width: 14%;
+				margin: 20px 0px;
+				padding: 0;
+}
+
+
+#reverse-img img {
+				width: 100%;
+}
+
+#conversion-result {
+				display: none;
+}
+
+#conversion-result .para-1,
+#conversion-result .para-3,
+#conversion-result .para-4,
+#conversion-result .para-5{
+				color: gray;
+				font-size: 12px;
+}
+
+#conversion-result .para-2 {
+				font-size: 30px;
+				padding: 0;
+				margin: 0;
+}
+
+#conversion-result .para-3,
+#conversion-result .para-4 {				
+				font-weight: 450;
+				margin: 10px 0 10px 0;
+}
+
+#conversion-result .para-3 {
+				margin-top: 25px;
+}
+
+#conversion-result .para-5 a {
+				color: blue;
+}
+
+
+
+@media screen and (min-width:800px) {
+				main {
+								margin: 20px 10px;
+				}
+				#main-container {
+								display: flex;
+								margin: 20px 0px;
+								
+				}					
+				
+				#input-amt {
+								width: 100%;
+				}				
+				
+				#select-currency-box1,
+				#select-currency-box2 {								
+								width: 40%;
+								margin: 0 10px 0 0px; 
+								position: relative;								
+				}
+				
+				#select-currency-box1 {
+								margin-left: 20px;
+								
+				}
+				
+				.options-container-1,
+				.options-container-2 {
+								position: absolute;
+								top: 30px;
+								border: 0.7px solid gray;
+								z-index: 2;
+								height: 350%;
+				}
+																
+				#reverse-img {
+								transform: rotate(90deg);
+								height: 50px;
+								width: 50px;
+								/*border: 1px solid yellowgreen;*/
+								margin-top: 21px;
+								margin-left: 25px;
+				}
+				
+				#reverse-img img {
+								width: 45px;
+				}
+				
+				.btn {
+								display: flex;
+								justify-content: flex-end;
+				}
+											
+				.convert-button {
+								width: 100px;
+								margin: 10px 9px;
+				}
+				
+				.search-box-1 input,
+				.search-box-2 input {
+								top: 25px;
+								padding: 9px;
+				}
+				
+				.search-box-1 button,
+				.search-box-2 button {
+								top: 35px;
+				}
+				
+				#conversion-result .para-1,
+				#conversion-result .para-3,
+				#conversion-result .para-4,
+				#conversion-result .para-5{
+								font-size: 18px;
+				}
+
+				#conversion-result .para-2 {
+								font-size: 40px
+				}
+				
+				
+}
+
+
